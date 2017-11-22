@@ -11,10 +11,11 @@ var storeBookList = mongoose.model('storeBookList', {
   title: String,
   author: String,
   description: String,
+available_Books: Number,
 thumbs_Up: Number,
 thumbs_Down: Number,
 comments: String,
-available_Books: Number
+name: String
  });
 
 module.exports = storeBookList;

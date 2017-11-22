@@ -34,74 +34,29 @@ app.get('/api/booklist', function(req, res) {
 
 });
 
-//List of all shoes per brandname.
-// app.get('/api/shoes/brand/:brandname', function(req, res) {
-//   var brandname = req.params.brandname
-//   shiftModel.find({
-//     brand: brandname
-//   }, function(err, brandShoes) {
-//     if (err) {
-//       return res.json({
-//         status: "error",
-//         error: err
-//       })
-//     } else {
-//       res.json({
-//         // status: "success",
-//         data: brandShoes
-//       })
-//     }
-//   })
-//
-// });
 
-//List of shoes per given size.
-// app.get('/api/shoes/size/:size', function(req, res) {
-//   var shoeSize = req.params.size
-//   shiftModel.find({
-//     size: shoeSize
-//   }, function(err, sizeShoe) {
-//     if (err) {
-//       return res.json({
-//         status: "error",
-//         error: err
-//       });
-//     } else {
-//       res.json({
-//         status: "success",
-//         data: sizeShoe
-//       })
-//     }
-//   })
-//
-// });
 
-//List of shoes given size and brand.
-// app.get('/api/shoes/brand/:brandname/size/:size', function(req, res) {
-//   var brandname = req.params.brandname
-//   var size = req.params.size
-//   shiftModel.find({
-//     brand: brandname,
-//     size: size
-//   }, function(err, dataFiltering) {
-//     console.log(dataFiltering);
-//     if (err) {
-//       return res.json({
-//         status: "error",
-//         error: err
-//       })
-//     } else {
-//       res.json({
-//         status: "success",
-//         data: dataFiltering,
-//
-//       })
-//     }
-//   })
-//
-// });
+app.get('/api/booklist/authour/:author', function(req, res) {
+  var authorName = req.params.author;
+  console.log(authorName);
+  bookModel.find({
+    author: authorName
+  }, function(err, authorNames) {
+    if (err) {
+      return res.json({
+        status: "error",
+        error: err
+      });
+    } else {
+      res.json({
+        status: "success",
+        authorNames: authorNames
+      })
+    }
+  })
 
-//Update the stock.
+});
+
 app.post('/api/booklist/borrow/:id', function(req, res) {
   var id = req.params.id;
 
@@ -146,21 +101,6 @@ app.post('/api/booklist', function(req, res) {
 
 
 
-  // bookModel.findOneAndUpdate({
-  //     brand: brand,
-  //     color: color,
-  //     price: price,
-  //     size: size
-  //   }, {
-  //     $inc: {
-  //       in_stock: in_stock
-  //     }
-  //   },
-    //function(err, shoeResults) {
-    //  if (err) {
-      //  return err;
-      //}
-       //else if (!shoeResults) {
         bookModel.create({
             image: image,
             title: title,
@@ -174,7 +114,7 @@ app.post('/api/booklist', function(req, res) {
               return err;
             }
             res.json({
-              bookData
+              bookData:bookData
             })
 
           });
@@ -182,47 +122,34 @@ app.post('/api/booklist', function(req, res) {
     })
 
 
-// app.get('/api/size', function(req, res) {
-//   shiftModel.find({}, function(err, sizeDropdown) {
-//     var sizeArray = [];
-//     var sizeObject = {};
-//     for (var i = 0; i < sizeDropdown.length; i++) {
-//       var sizeLoop = sizeDropdown[i];
-//       if (sizeObject[sizeLoop.size] === undefined) {
-//         sizeObject[sizeLoop.size] = sizeLoop.size;
-//         sizeArray.push(sizeLoop.size);
-//       }
-//     }
-//     if (err) {
-//       return (err)
-//     }
-//     res.json({
-//       sizeArray
-//     })
-//   })
-//
-// });
+    app.post('/api/return', function(req, res) {
 
-// app.get('/api/brand', function(req, res) {
-//   shiftModel.find({}, function(err, brandDropdown) {
-//     var brandArray = [];
-//     var brandObject = {};
-//     for (var i = 0; i < brandDropdown.length; i++) {
-//       var brandLoop = brandDropdown[i];
-//       if (brandObject[brandLoop.brand] === undefined) {
-//         brandObject[brandLoop.brand] = brandLoop.brand;
-//         brandArray.push(brandLoop.brand);
-//       }
-//     }
-//     if (err) {
-//       return (err)
-//     }
-//     res.json({
-//       brandArray
-//     })
-//   })
-//
-// });
+      var title = req.body.title;
+      var author = req.body.author;
+      //var description = req.body.description;
+      var available_Books = req.body.available_Books;
+
+      bookModel.findOneAndUpdate({
+          title: title,
+          author: author,
+
+
+        }, {
+          $inc: {
+            available_Books: available_Books
+          }
+        },
+              function(err, bookData) {
+                if (err) {
+                  return err;
+                }
+                res.json({
+                  bookData
+                })
+
+              });
+          });
+
 
 var port = process.env.PORT || 5000
 var server = app.listen(port, function() {
