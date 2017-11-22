@@ -144,7 +144,10 @@ app.post('/api/booklist', function(req, res) {
   var image = req.body.image;
   var title = req.body.title;
   var author = req.body.author;
-  var description = req.body.description
+  var description = req.body.description;
+  var avaliable_Books = req.body.avaliable_Books;
+
+
 
   // bookModel.findOneAndUpdate({
   //     brand: brand,
@@ -165,7 +168,8 @@ app.post('/api/booklist', function(req, res) {
             image: image,
             title: title,
             author: author,
-            description: description
+            description: description,
+            avaliable_Books: avaliable_Books
 
           },
           function(err, bookData) {
