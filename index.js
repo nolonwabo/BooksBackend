@@ -102,43 +102,40 @@ app.get('/api/booklist', function(req, res) {
 // });
 
 //Update the stock.
-// app.post('/api/shoes/sold/:id', function(req, res) {
-//   var id = req.params.id;
-//
-//   console.log(shiftModel.findOneAndUpdate);
-//
-//   shiftModel.findOneAndUpdate({
-//       _id: ObjectId(id)
-//     }, {
-//       $inc: {
-//         "in_stock": -1
-//       }
-//     },
-//
-//     {
-//       upsert: false,
-//       new: true
-//     },
-//
-//     function(err, updatedShoeInfo) {
-//       if (err) {
-//         return res.json({
-//           status: "error",
-//           error: err,
-//           data: []
-//         });
-//       }
-//       if (updatedShoeInfo.in_stock <= 0) {
-//         updatedShoeInfo.remove()
-//
-//         res.json({
-//           status: "success",
-//           data: updatedShoeInfo
-//         })
-//       }
-//
-//     })
-// })
+app.post('/api/booklist/borrow/:id', function(req, res) {
+  var id = req.params.id;
+
+  bookModel.findOneAndUpdate({
+      _id: ObjectId(id)
+    }, {
+      $inc: {
+        "avaliable_Books": -1
+      }
+    },
+
+    {
+      upsert: false,
+      new: true
+    },
+
+    function(err, updatedBookInfo) {
+      if (err) {
+        return res.json({
+          status: "error",
+          error: err,
+          data: []
+        });
+      }
+//       if (updatedBookInfo.avaliable_Books <= 0) {
+// updatedBookInfo.remove()
+        res.json({
+          status: "success",
+          data: updatedBookInfo
+        })
+      // }
+
+    })
+})
 //Add new shoe.
 app.post('/api/booklist', function(req, res) {
   var image = req.body.image;
