@@ -14,7 +14,7 @@ var storeBookList = mongoose.model('storeBookList', {
 thumbs_Up: Number,
 thumbs_Down: Number,
 comments: String,
-avaliable_Books: Number
+available_Books: Number
  });
 
 module.exports = storeBookList;

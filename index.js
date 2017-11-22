@@ -109,7 +109,7 @@ app.post('/api/booklist/borrow/:id', function(req, res) {
       _id: ObjectId(id)
     }, {
       $inc: {
-        "avaliable_Books": -1
+        "available_Books": -1
       }
     },
 
@@ -142,7 +142,7 @@ app.post('/api/booklist', function(req, res) {
   var title = req.body.title;
   var author = req.body.author;
   var description = req.body.description;
-  var avaliable_Books = req.body.avaliable_Books;
+  var available_Books = req.body.available_Books;
 
 
 
@@ -166,7 +166,7 @@ app.post('/api/booklist', function(req, res) {
             title: title,
             author: author,
             description: description,
-            avaliable_Books: avaliable_Books
+            available_Books: available_Books
 
           },
           function(err, bookData) {
