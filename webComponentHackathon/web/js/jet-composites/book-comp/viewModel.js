@@ -44,9 +44,37 @@ define(
         });
         self.books(mappedTasks);
       });
-
-
     }
+
+      self.numberOfClicks = ko.observable(20);
+
+                  self.registerClick = function() {
+                          self.numberOfClicks(self.numberOfClicks() + 1);
+                  };
+
+             //      self.resetClicks = function() {
+             //              self.numberOfClicks(0);
+             //      };
+
+                  self.hasClickedTooManyTimes = ko.computed(function() {
+                          return self.numberOfClicks() >= 1;
+                  }, self);
+
+                  self.clicks = ko.observable(5);
+
+                  self.regClick = function() {
+                          self.clicks(self.clicks() + 1);
+                  };
+
+             //      self.resetClicks = function() {
+             //              self.numberOfClicks(0);
+             //      };
+
+                  self.howMany = ko.computed(function() {
+                          return self.clicks() >= 1;
+                  }, self);
+
+
 
     return new BookModel();
 

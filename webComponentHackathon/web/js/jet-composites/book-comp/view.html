@@ -23,13 +23,33 @@
                 <div class="col-sm-4">
                 <!-- <p data-bind="text:messageText"></p> -->
 
+                <div class="btn-group">
+
+                  <div>
+
+
+                  <button class="btn btn-success"data-bind='click: registerClick, disable: hasClickedTooManyTimes'><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"><span data-bind='text: numberOfClicks'>&nbsp;</span></span>
+                  </button>
+
+
+                  <button class="btn btn-success"data-bind='click: regClick, disable: howMany'><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"><span data-bind='text: clicks'>&nbsp;</span></span>
+                  </button>
+                  <!--
+                  <button type="button" class="btn btn-primary">Apple</button>
+                  <button type="button" class="btn btn-primary">Samsung</button>
+                  <button type="button" class="btn btn-primary">Sony</button> -->
+                </div>
+                <br><br>
                 <li class="list-group-item"><strong>Title :</strong>  <span id="bootTitle" data-bind="text:title()"></span></li>
                     <li class="list-group-item"><a data-bind="click:$parent.clickHandler, attr:{id:index}"><img width="200px" height="200px" data-bind="attr:{src: image()}"/></a></li>
                     <li class="list-group-item"><strong>Author :</strong> <span id="bookAuth" data-bind="text:author"></span></li>
+
                     <li class="list-group-item"><strong>Description :</strong>  <span id="bookDescrpt" data-bind="text:description"></span></li>
                     <li class="list-group-item"><strong>Available Books :</strong><span id="AvailibleBooks" data-bind="text:available_Books"></span></li>
+                    <br>
+                    <!-- <div class='col-sm-4'> -->
+                    </div>
                     <br></br>
-
 
                 </div>
         </ul>

@@ -13,39 +13,49 @@
   <!-- <h1>About this project</h1> -->
   <!-- <form data-bind="submit:"> -->
 
-  <div class="form-group">
-    <fieldset class="col-xs-2">
-      <label class="control-label" for="readOnlyInput">First Name:</label>
-      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="First name "data-bind="value: firstName"></p>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-    <fieldset class="col-xs-2">
-      <label class="control-label" for="readOnlyInput">last Name:</label>
-      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="Last name " data-bind="value: lastName"></p>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-    <fieldset class="col-xs-2">
-      <label class="control-label" for="readOnlyInput">Email:</label>
-      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="email "  data-bind="value: email"></p>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-          <div class="col-xs-8">
-                <label for="exampleTextarea">Physical Adress</label>
-                <textarea  data-bind="value: address" class="form-control" id="exampleTextarea" ></textarea>
-              </div>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center"><u><b>Borrow A Book</b></u></h1>
+    <br>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <fieldset>
+          <label class="control-label" for="readOnlyInput">First Name:</label>
+          <p><input class="form-control" id="readOnlyInput" type="text" placeholder="First name "data-bind="value: firstName"></p>
+        </fieldset>
       </div>
 
-  <button type="submit" class="btn btn-success"data-bind="click: borrowBook">Borrow</button>
+      <div class="form-group">
+        <fieldset>
+          <label class="control-label" for="readOnlyInput">last Name:</label>
+          <p><input class="form-control" id="readOnlyInput" type="text" placeholder="Last name " data-bind="value: lastName"></p>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <label class="control-label" for="readOnlyInput">Email:</label>
+          <p><input class="form-control" id="readOnlyInput" type="text" placeholder="email "  data-bind="value: email"></p>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+              <div class="width-10px">
+                    <label for="exampleTextarea">Physical Adress</label>
+                    <textarea  data-bind="value: address" class="form-control" id="exampleTextarea" ></textarea>
+                  </div>
+          </div>
+
+      <button type="submit" class="btn btn-success"data-bind="click: borrowBook">Borrow</button>
+
+      </div>
+    </div>
+
+    <div>
+      <p data-bind="text:message"></p>
+    </div>
+
+    </div>
 
   </div>
-</div>
-
-<div>
-  <p data-bind="text:message"></p>
 </div>

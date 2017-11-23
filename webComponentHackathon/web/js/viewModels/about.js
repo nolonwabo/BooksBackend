@@ -18,6 +18,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojrouter'],
      self.savedBook = ko.observable()
      self.message = ko.observable("")
 
+
      self.borrowBook = function(){
       var currentfstName = self.firstName();
       var currentlstName = self.lastName();
@@ -29,11 +30,13 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojrouter'],
    type: 'POST',
    dataType: 'json',
    success: function(bookTaken) {
-   self.message("You have borrowed your book successfully") 
+   self.message("You have borrowed your book successfully")
    }
 
  })
+
 }
+
       //  self.books(mappedTasks);
     //  });
 
@@ -111,7 +114,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojrouter'],
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-
+  
     return new AddingDetailsModel();
 
 
