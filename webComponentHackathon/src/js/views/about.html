@@ -1,0 +1,51 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+ <head>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-GC77SCz5O11gVtXl0sSfbQYEWSSznn1wPDHgL1BGUTFU9iEoUrG4IOJa5CBVY8kR" crossorigin="anonymous">
+         <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+<div class="oj-hybrid-padding">
+  <!-- <h1>About this project</h1> -->
+  <!-- <form data-bind="submit:"> -->
+
+  <div class="form-group">
+    <fieldset class="col-xs-2">
+      <label class="control-label" for="readOnlyInput">First Name:</label>
+      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="First name "data-bind="value: firstName"></p>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <fieldset class="col-xs-2">
+      <label class="control-label" for="readOnlyInput">last Name:</label>
+      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="Last name " data-bind="value: lastName"></p>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <fieldset class="col-xs-2">
+      <label class="control-label" for="readOnlyInput">Email:</label>
+      <p><input class="form-control" id="readOnlyInput" type="text" placeholder="email "  data-bind="value: email"></p>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+          <div class="col-xs-8">
+                <label for="exampleTextarea">Physical Adress</label>
+                <textarea  data-bind="value: address" class="form-control" id="exampleTextarea" ></textarea>
+              </div>
+      </div>
+
+  <button type="submit" class="btn btn-success"data-bind="click: borrowBook">Borrow</button>
+
+  </div>
+</div>
+
+<div>
+  <p data-bind="text:message"></p>
+</div>

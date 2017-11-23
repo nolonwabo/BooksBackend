@@ -1,0 +1,58 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+ <head>
+
+                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-GC77SCz5O11gVtXl0sSfbQYEWSSznn1wPDHgL1BGUTFU9iEoUrG4IOJa5CBVY8kR" crossorigin="anonymous">
+                 <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+
+  <!-- <p>This dashboard is the product of the 2018 Steltix / CodeX hack-a-thon.</p> -->
+                  <div class="oj-hybrid-padding">
+                                         <div class="container">
+                                         <div class="row">
+                                                 <form class=" form-group  jumbotron-fluid">
+                                 <!-- <div class="form-group">
+                                   <fieldset class="col-xs-2">
+                                     <label class="control-label" for="readOnlyInput">last Name:</label>
+                                     <p><input class="form-control" id="readOnlyInput" type="text" placeholder="Last name " data-bind="value: lastName"></p>
+                                   </fieldset>
+                                 </div> -->
+                                 <div class="form-group">
+                                   <fieldset class="col-xs-2">
+                                     <label class="control-label" for="readOnlyInput" >Title:</label>
+                                     <p><input class="form-control" id="title" type="text" placeholder="Title " data-bind="value: title"></p>
+                                   </fieldset>
+                                 </div>
+                                 <div class="form-group">
+                                   <fieldset class="col-xs-2">
+                                     <label class="control-label" for="readOnlyInput">Author:</label>
+                                     <p><input class="form-control" id="author" type="text" placeholder="Author " data-bind="value: author"></p>
+                                   </fieldset>
+                                 </div>
+                                 <!-- <div class="form-group">
+                                   <fieldset class="col-xs-2">
+                                     <label class="control-label" for="readOnlyInput">Description:</label>
+                                     <p><input class="form-control" id="description" type="text" placeholder="description " data-bind="value: description"></p>
+                                   </fieldset> -->
+                                 <div class="form-group">
+                                   <fieldset class="col-xs-2">
+                                     <label class="control-label" for="readOnlyInput">Available books:</label>
+                                     <p><input class="form-control" id="available_Books" type="text" placeholder="available books " data-bind="value: available_Books"></p>
+                                   </fieldset>
+                                 </div>
+                           <!-- <input type="text"  placeholder="Title" id="title" data-bind="value:title"> -->
+                           <!-- <input type="text" placeholder="Author"id="author" data-bind="value:author"> -->
+                           <!-- <textarea type="text" placeholder="Description" id="description" data-bind="value:description"></textarea> -->
+                           <!-- <input type="text" value ="available_Books" placeholder="available_Books" id="available_Books" data-bind="value:available_Books"> -->
+                           <input class="btn btn-success"type="button" value="Add Book" data-bind="click:addingBook">
+                         </div>
+</form>
+         </div>
+                         </div>
+</div>

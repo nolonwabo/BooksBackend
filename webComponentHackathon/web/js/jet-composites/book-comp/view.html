@@ -1,0 +1,38 @@
+<!--
+  Copyright (c) 2015, 2017, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<!-- <label for=""><b>search:</b></label>
+<input type="search" id="myInput" name="" value=""> -->
+<!-- <button type="button" name="button" id="authorName">author name</button> -->
+<!-- <input class="form-control" placeholder="Search…" type="search" name="filter" data-bind="textInput: author" autocomplete="off" /> -->
+
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-GC77SCz5O11gVtXl0sSfbQYEWSSznn1wPDHgL1BGUTFU9iEoUrG4IOJa5CBVY8kR" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/book-comp/style.css">
+
+</head>
+<div class="container">
+        <div class="row">
+                <h1 class="text-center">  takeAread </h1><span></span>
+                <ul class="list-group-vertical" data-bind="foreach:books">
+                <div class="col-sm-4">
+                <!-- <p data-bind="text:messageText"></p> -->
+
+                <li class="list-group-item"><strong>Title :</strong>  <span id="bootTitle" data-bind="text:title()"></span></li>
+                    <li class="list-group-item"><a data-bind="click:$parent.clickHandler, attr:{id:index}"><img width="200px" height="200px" data-bind="attr:{src: image()}"/></a></li>
+                    <li class="list-group-item"><strong>Author :</strong> <span id="bookAuth" data-bind="text:author"></span></li>
+                    <li class="list-group-item"><strong>Description :</strong>  <span id="bookDescrpt" data-bind="text:description"></span></li>
+                    <li class="list-group-item"><strong>Available Books :</strong><span id="AvailibleBooks" data-bind="text:available_Books"></span></li>
+                    <br></br>
+
+
+                </div>
+        </ul>
+
+        </div>
+</div>

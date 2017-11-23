@@ -1,0 +1,33 @@
+{
+  "name": "code-editor",
+  "displayName": "code-editor",
+  "description": "Wrapper for ACE js editor",
+  "version": "1.0.0",
+  "jetVersion": "^4.0.0",
+  "properties": {
+    "image": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+  },
+  "theme": {
+      "type": "string"
+  },
+  "actiontext": {
+      "type": "string"
+  },
+  "cb": {
+    "type": "function"
+}
+},
+  "methods": {
+
+  },
+  "events": {
+
+  },
+  "slots": {
+
+  }
+}

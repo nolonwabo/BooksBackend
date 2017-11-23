@@ -1,0 +1,16 @@
+book-comp:not(.oj-complete){
+  visibility: hidden;
+}
+
+book-comp{
+
+
+}
+li{
+        list-style: none;
+}
+
+ul li {
+  display: inline;
+  padding: 10px;
+}
